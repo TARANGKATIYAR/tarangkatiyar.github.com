@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarang Katiyar • Portfolio</title>
+    <meta name="theme-color" content="#000000">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="layout">
+        <!-- Left Sidebar Navigation -->
+        <aside class="sidebar" role="navigation" aria-label="Primary Navigation">
+            <div class="brand-section">
+                <div class="logo">TK</div>
+                <div class="identity">
+                    <h1>Tarang Katiyar</h1>
+                    <p class="subtitle">Tech Enthusiast & Innovator</p>
+                </div>
+            </div>
+            
+            <nav class="nav-menu" role="tablist">
+                <button id="introduction-tab" class="nav-btn active" role="tab" aria-selected="true" aria-controls="introduction" data-tab="introduction">
+                    <span class="nav-icon">👋</span>
+                    <span class="nav-text">Introduction</span>
+                </button>
+                <button id="experience-tab" class="nav-btn" role="tab" aria-selected="false" aria-controls="experience" data-tab="experience">
+                    <span class="nav-icon">💼</span>
+                    <span class="nav-text">Experience</span>
+                </button>
+                <button id="awards-tab" class="nav-btn" role="tab" aria-selected="false" aria-controls="awards" data-tab="awards">
+                    <span class="nav-icon">🏆</span>
+                    <span class="nav-text">Awards</span>
+                </button>
+                <button id="volunteering-tab" class="nav-btn" role="tab" aria-selected="false" aria-controls="volunteering" data-tab="volunteering">
+                    <span class="nav-icon">🤝</span>
+                    <span class="nav-text">Volunteering</span>
+                </button>
+                <button id="certifications-tab" class="nav-btn" role="tab" aria-selected="false" aria-controls="certifications" data-tab="certifications">
+                    <span class="nav-icon">📜</span>
+                    <span class="nav-text">Certifications</span>
+                </button>
+                <button id="projects-tab" class="nav-btn" role="tab" aria-selected="false" aria-controls="projects" data-tab="projects">
+                    <span class="nav-icon">🚀</span>
+                    <span class="nav-text">Projects</span>
+                </button>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="content-area" id="main-content">
+            <!-- Introduction Section -->
+            <section id="introduction" class="content-section active" role="tabpanel" aria-labelledby="introduction-tab">
+                <div class="hero-section">
+                    <h2 class="hero-title">Innovation for Purpose</h2>
+                    <p class="hero-description">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                    
+                </div>
+            </section>
+
+            <!-- Experience Section -->
+            <section id="experience" class="content-section" role="tabpanel" aria-labelledby="experience-tab" hidden>
+                <div class="section-header">
+                    <h2>Professional Experience</h2>
+                    <p>My journey through various roles and responsibilities</p>
+                </div>
+                
+                <div class="timeline">
+                    <div class="timeline-item reveal" data-reveal>
+                        <div class="timeline-date">May 2025 - Present</div>
+                        <div class="timeline-content">
+                            <h3>Senior Software Engineer</h3>
+                            <h4>Lorem Tech Solutions</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Mauris viverra veniam sit amet lacus cursus de congue. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item reveal" data-reveal>
+                        <div class="timeline-date">April 2025 - Present</div>
+                        <div class="timeline-content">
+                            <h3>Full Stack Developer</h3>
+                            <h4>Digital Innovation Corp</h4>
+                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item reveal" data-reveal>
+                        <div class="timeline-date">Jan 2023 - Jan 2025</div>
+                        <div class="timeline-content">
+                            <h3>Junior Web Developer</h3>
+                            <h4>Creative Tech Studio</h4>
+                            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item reveal" data-reveal>
+                        <div class="timeline-date">Sep 2023 - Jan 2024</div>
+                        <div class="timeline-content">
+                            <h3>Software Development Intern</h3>
+                            <h4>Lorem Cloud Technologies</h4>
+                            <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Awards Section -->
+            <section id="awards" class="content-section" role="tabpanel" aria-labelledby="awards-tab" hidden>
+                <div class="section-header">
+                    <h2>Honors & Awards</h2>
+                    <p>Recognition for excellence in design and technology</p>
+                </div>
+                
+                <div class="awards-grid">
+                    <div class="award-card reveal" data-reveal>
+                        <div class="award-year">2024</div>
+                        <h3>Lorem Excellence Award</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                        <div class="award-badge">🥇 Excellence</div>
+                    </div>
+                    
+                    <div class="award-card reveal" data-reveal>
+                        <div class="award-year">2023</div>
+                        <h3>Innovation Leadership Prize</h3>
+                        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+                        <div class="award-badge">🏆 Leadership</div>
+                    </div>
+                    
+                    <div class="award-card reveal" data-reveal>
+                        <div class="award-year">2023</div>
+                        <h3>Digital Transformation Award</h3>
+                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</p>
+                        <div class="award-badge">💻 Digital</div>
+                    </div>
+                    
+                    <div class="award-card reveal" data-reveal>
+                        <div class="award-year">2022</div>
+                        <h3>Creative Solutions Recognition</h3>
+                        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.</p>
+                        <div class="award-badge">� Creative</div>
+                    </div>
+                    
+                    <div class="award-card reveal" data-reveal>
+                        <div class="award-year">2022</div>
+                        <h3>Technology Pioneer Award</h3>
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.</p>
+                        <div class="award-badge">🚀 Pioneer</div>
+                    </div>
+                    
+                    <div class="award-card reveal" data-reveal>
+                        <div class="award-year">2021</div>
+                        <h3>Outstanding Achievement Medal</h3>
+                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium.</p>
+                        <div class="award-badge">🏅 Achievement</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Volunteering Section -->
+            <section id="volunteering" class="content-section" role="tabpanel" aria-labelledby="volunteering-tab" hidden>
+                <div class="section-header">
+                    <h2>Community Impact</h2>
+                    <p>Giving back through volunteer work and community initiatives</p>
+                </div>
+                
+                <div class="volunteer-grid">
+                    <div class="volunteer-card reveal" data-reveal>
+                        <h3>Community Development Initiative</h3>
+                        <h4>Lorem Foundation • Jan 2023 - Present</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.</p>
+                        <div class="impact-stats">
+                            <span>� 500+ Lives Impacted</span>
+                            <span>� Community Growth</span>
+                            <span>💡 Innovation Focus</span>
+                        </div>
+                    </div>
+                    
+                    <div class="volunteer-card reveal" data-reveal>
+                        <h3>Digital Literacy Program</h3>
+                        <h4>Tech for All • Ongoing</h4>
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur.</p>
+                        <div class="impact-stats">
+                            <span>💻 Digital Skills</span>
+                            <span>🎓 Education Focus</span>
+                            <span>🤝 Collaboration</span>
+                        </div>
+                    </div>
+                    
+                    <div class="volunteer-card reveal" data-reveal>
+                        <h3>Environmental Conservation Project</h3>
+                        <h4>Green Future Alliance • 2022 - 2024</h4>
+                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi.</p>
+                        <div class="impact-stats">
+                            <span>🌱 Sustainability</span>
+                            <span>🌍 Global Impact</span>
+                            <span>♻️ Eco Solutions</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Certifications Section -->
+            <section id="certifications" class="content-section" role="tabpanel" aria-labelledby="certifications-tab" hidden>
+                <div class="section-header">
+                    <h2>Professional Certifications</h2>
+                    <p>Continuous learning and skill development</p>
+                </div>
+                
+                <div class="cert-grid">
+                    <div class="cert-card reveal" data-reveal>
+                        <div class="cert-provider">Lorem Academy</div>
+                        <h3>Advanced Web Development Certificate</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                    
+                    <div class="cert-card reveal" data-reveal>
+                        <div class="cert-provider">Tech Institute</div>
+                        <h3>Full Stack JavaScript Certification</h3>
+                        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
+                    
+                    <div class="cert-card reveal" data-reveal>
+                        <div class="cert-provider">Cloud Solutions</div>
+                        <h3>Cloud Architecture Professional</h3>
+                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                    </div>
+                    
+                    <div class="cert-card reveal" data-reveal>
+                        <div class="cert-provider">Security Academy</div>
+                        <h3>Cybersecurity Specialist Certificate</h3>
+                        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </div>
+                    
+                    <div class="cert-card reveal" data-reveal>
+                        <div class="cert-provider">Data Science Hub</div>
+                        <h3>Machine Learning Fundamentals</h3>
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+                    </div>
+                    
+                    <div class="cert-card reveal" data-reveal>
+                        <div class="cert-provider">Mobile Dev Institute</div>
+                        <h3>Mobile App Development Certificate</h3>
+                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum.</p>
+                    </div>
+                    
+                    <div class="cert-card reveal" data-reveal>
+                        <div class="cert-provider">UX Design Academy</div>
+                        <h3>User Experience Design Certification</h3>
+                        <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.</p>
+                    </div>
+                    
+                    <div class="cert-card reveal" data-reveal>
+                        <div class="cert-provider">DevOps Institute</div>
+                        <h3>DevOps Engineering Certificate</h3>
+                        <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects" class="content-section" role="tabpanel" aria-labelledby="projects-tab" hidden>
+                <div class="section-header">
+                    <h2>Featured Projects</h2>
+                    <p>Showcasing innovative solutions and creative implementations</p>
+                </div>
+                
+                <div class="projects-grid">
+                    <div class="project-card reveal" data-reveal>
+                        <div class="project-header">
+                            <h3>Lorem E-Commerce Platform</h3>
+                            <div class="project-status">Live</div>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">Express</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card reveal" data-reveal>
+                        <div class="project-header">
+                            <h3>Digital Analytics Dashboard</h3>
+                            <div class="project-status">Development</div>
+                        </div>
+                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Vue.js</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">Docker</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card reveal" data-reveal>
+                        <div class="project-header">
+                            <h3>Mobile Learning Application</h3>
+                            <div class="project-status">Beta</div>
+                        </div>
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">React Native</span>
+                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">Redux</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card reveal" data-reveal>
+                        <div class="project-header">
+                            <h3>Cloud Infrastructure Automation</h3>
+                            <div class="project-status">Completed</div>
+                        </div>
+                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">AWS</span>
+                            <span class="tech-tag">Terraform</span>
+                            <span class="tech-tag">Kubernetes</span>
+                            <span class="tech-tag">Jenkins</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card reveal" data-reveal>
+                        <div class="project-header">
+                            <h3>AI Content Management System</h3>
+                            <div class="project-status">Planning</div>
+                        </div>
+                        <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Angular</span>
+                            <span class="tech-tag">Django</span>
+                            <span class="tech-tag">TensorFlow</span>
+                            <span class="tech-tag">Redis</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card reveal" data-reveal>
+                        <div class="project-header">
+                            <h3>Blockchain Voting Platform</h3>
+                            <div class="project-status">Prototype</div>
+                        </div>
+                        <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur quis autem.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Solidity</span>
+                            <span class="tech-tag">Web3.js</span>
+                            <span class="tech-tag">Ethereum</span>
+                            <span class="tech-tag">Next.js</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
