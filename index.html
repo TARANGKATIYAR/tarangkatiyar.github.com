@@ -3,359 +3,816 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tarang Katiyar • Portfolio</title>
-    <meta name="theme-color" content="#000000">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <title>Tarang Katiyar · Full-Stack Developer</title>
+    <meta name="description" content="Purpose-driven technologist, full-stack developer, and innovation enthusiast focused on creating meaningful digital solutions.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- New primary font: Sora (replaces Inter) -->
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Display / Heading font: Krona One -->
+    <link href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style-clean.css">
+    <link rel="icon" type="image/png" href="logo.png">
 </head>
 <body>
     <div class="layout">
         <!-- Left Sidebar Navigation -->
-        <aside class="sidebar" role="navigation" aria-label="Primary Navigation">
+        <aside class="sidebar" role="navigation" aria-label="Main navigation">
+            <!-- Brand Section -->
             <div class="brand-section">
-                <div class="logo">TK</div>
+                <div class="logo">
+                    <img src="logo.png" alt="Tarang Katiyar Logo" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <span class="logo-fallback" style="display: none;">TK</span>
+                </div>
                 <div class="identity">
                     <h1>Tarang Katiyar</h1>
-                    <p class="subtitle">Tech Enthusiast & Innovator</p>
+                    <p class="subtitle">Learner. Maker. Changemaker.</p>
                 </div>
             </div>
-            
+
+            <!-- Navigation Menu -->
             <nav class="nav-menu" role="tablist">
-                <button id="introduction-tab" class="nav-btn active" role="tab" aria-selected="true" aria-controls="introduction" data-tab="introduction">
+                <button class="nav-collapse-toggle" id="navCollapseToggle" aria-label="Collapse sidebar" title="Collapse">⫶</button>
+                <button class="nav-btn active" data-target="introduction" data-label="Introduction" role="tab" aria-selected="true">
                     <span class="nav-icon">👋</span>
                     <span class="nav-text">Introduction</span>
                 </button>
-                <button id="experience-tab" class="nav-btn" role="tab" aria-selected="false" aria-controls="experience" data-tab="experience">
-                    <span class="nav-icon">💼</span>
+                <button class="nav-btn" data-target="experience" data-label="Experience" role="tab" aria-selected="false">
+                    <span class="nav-icon">🧭</span>
                     <span class="nav-text">Experience</span>
                 </button>
-                <button id="awards-tab" class="nav-btn" role="tab" aria-selected="false" aria-controls="awards" data-tab="awards">
+                <button class="nav-btn" data-target="awards" data-label="Awards" role="tab" aria-selected="false">
                     <span class="nav-icon">🏆</span>
                     <span class="nav-text">Awards</span>
                 </button>
-                <button id="volunteering-tab" class="nav-btn" role="tab" aria-selected="false" aria-controls="volunteering" data-tab="volunteering">
+                <button class="nav-btn" data-target="volunteering" data-label="Volunteering" role="tab" aria-selected="false">
                     <span class="nav-icon">🤝</span>
                     <span class="nav-text">Volunteering</span>
                 </button>
-                <button id="certifications-tab" class="nav-btn" role="tab" aria-selected="false" aria-controls="certifications" data-tab="certifications">
+                <button class="nav-btn" data-target="certifications" data-label="Certifications" role="tab" aria-selected="false">
                     <span class="nav-icon">📜</span>
                     <span class="nav-text">Certifications</span>
                 </button>
-                <button id="projects-tab" class="nav-btn" role="tab" aria-selected="false" aria-controls="projects" data-tab="projects">
-                    <span class="nav-icon">🚀</span>
+                <button class="nav-btn" data-target="projects" data-label="Projects" role="tab" aria-selected="false">
+                    <span class="nav-icon">💻</span>
                     <span class="nav-text">Projects</span>
                 </button>
             </nav>
         </aside>
 
+        <!-- Mobile Menu Button -->
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open navigation menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+            <div class="mobile-menu-content">
+                <div class="mobile-menu-header">
+                    <div class="mobile-brand">
+                        <div class="mobile-logo">TK</div>
+                        <div class="mobile-identity">
+                            <h2>Tarang Katiyar</h2>
+                            <p>Learner. Maker. Changemaker.</p>
+                        </div>
+                    </div>
+                    <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close navigation menu">×</button>
+                </div>
+                <nav class="mobile-nav-menu">
+                    <button class="mobile-nav-btn active" data-target="introduction">
+                        <span class="mobile-nav-icon">👋</span>
+                        <span class="mobile-nav-text">Introduction</span>
+                    </button>
+                    <button class="mobile-nav-btn" data-target="experience">
+                        <span class="mobile-nav-icon">🧭</span>
+                        <span class="mobile-nav-text">Experience</span>
+                    </button>
+                    <button class="mobile-nav-btn" data-target="awards">
+                        <span class="mobile-nav-icon">🏆</span>
+                        <span class="mobile-nav-text">Awards</span>
+                    </button>
+                    <button class="mobile-nav-btn" data-target="volunteering">
+                        <span class="mobile-nav-icon">🤝</span>
+                        <span class="mobile-nav-text">Volunteering</span>
+                    </button>
+                    <button class="mobile-nav-btn" data-target="certifications">
+                        <span class="mobile-nav-icon">📜</span>
+                        <span class="mobile-nav-text">Certifications</span>
+                    </button>
+                    <button class="mobile-nav-btn" data-target="projects">
+                        <span class="mobile-nav-icon">💻</span>
+                        <span class="mobile-nav-text">Projects</span>
+                    </button>
+                </nav>
+            </div>
+        </div>
+
         <!-- Main Content Area -->
-        <main class="content-area" id="main-content">
+        <main class="content-area">
             <!-- Introduction Section -->
-            <section id="introduction" class="content-section active" role="tabpanel" aria-labelledby="introduction-tab">
-                <div class="hero-section">
-                    <h2 class="hero-title">Innovation for Purpose</h2>
-                    <p class="hero-description">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
-                    
+            <section id="introduction" class="content-section active" role="tabpanel">
+                <!-- Page Header -->
+                <div class="page-header">
+                    <h1 class="page-title">Introduction</h1>
+                </div>
+                
+                <!-- Hero Section with Image and Content -->
+                <div class="hero-container">
+                    <div class="hero-image">
+                        <div class="profile-image">
+                            <!-- Use local image file -->
+                       <img src="https://i.ibb.co/SpgYvqr/image.png" 
+                           alt="Tarang Katiyar Profile" 
+                                 class="profile-photo"
+                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <!-- Fallback placeholder -->
+                            <div class="image-placeholder" style="display: none;">
+                                <div class="profile-avatar">
+                                    <span class="avatar-initial">T</span>
+                                </div>
+                                <div class="placeholder-text">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Content below image -->
+                        <div class="hero-basic-info">
+                            <p class="hero-subtitle">Student @ Gurukul The School | Keen Tech Enthusiast | Creative Innovator | Sustainability Advocate | Building Future-Ready Ideas | Learner. Maker. Changemaker.</p>
+                            <h1 class="hero-title">TARANG KATIYAR</h1>
+                            <p class="hero-location">Delhi, India</p>
+                            
+                            <div class="summary-section">
+                                <h2></h2>
+                                <p>I believe in learning as an ongoing journey, where each step leads to personal growth and the ability to make a positive impact. Right now, I'm deeply focused on how technology can address real-world challenges, help communities evolve, and drive the development of a sustainable future.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-content">
+                        <div class="hero-description">
+                            <div class="key-attributes">
+                                <div class="attribute-item">
+                                    <h3>1. Tech Enthusiast & Innovator</h3>
+                                    <p>My passion for technology drives me to explore diverse fields — from web development to VFX, GFX, and videography. I enjoy discovering how tech can solve practical problems and bring creative ideas to life. I'm particularly drawn to sustainability and constantly thinking of innovative ways to harness technology for eco-friendly solutions.</p>
+                                </div>
+                                
+                                <div class="attribute-item">
+                                    <h3>2. Sustainability Advocate</h3>
+                                    <p>I'm committed to creating solutions that not only improve lives but also benefit the planet. Whether through tech projects, environmental initiatives, or innovative ideas, my goal is to contribute to a more sustainable future. I believe that technology is a powerful tool for change, and I am always looking for ways to use it to create a lasting positive impact on our environment.</p>
+                                </div>
+                                
+                                <div class="attribute-item">
+                                    <h3>3. Problem Solver & Critical Thinker</h3>
+                                    <p>The time I've spent working with STEM concepts has shaped my approach to problem-solving. I apply analytical thinking to real-world issues, and my exposure to design thinking pushes me to approach challenges from creative and alternative perspectives. This mindset nurtures both my innovation and resilience.</p>
+                                </div>
+                                
+                                <div class="attribute-item">
+                                    <h3>4. Committed to Community Impact</h3>
+                                    <p>In addition to my passion for technology and sustainability, I'm dedicated to giving back to my community. Through various initiatives, I'm working to raise awareness around important social causes and help others. I'm always eager to collaborate with like-minded individuals and explore how we can work together for a better future.</p>
+                                </div>
+                                
+                                <div class="attribute-item">
+                                    <h3>5. Holistic Approach to Growth</h3>
+                                    <p>Outside of tech, I engage in activities that nurture both my body and mind. From cricket and badminton to running and cycling, I believe in a well-rounded approach to personal development. Participating in design competitions has also helped me hone my creativity and problem-solving skills.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="skills-tags">
+                                
+                                <span class="skill-tag">Web Development</span>
+                                <span class="skill-tag">VFX & GFX</span>
+                                <span class="skill-tag">Videography</span>
+                                <span class="skill-tag">Sustainability Tech</span>
+                                <span class="skill-tag">Design Thinking</span>
+                                <span class="skill-tag">STEM</span>
+                                <span class="skill-tag">Community Impact</span>
+                                <span class="skill-tag">Problem Solving</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
             <!-- Experience Section -->
-            <section id="experience" class="content-section" role="tabpanel" aria-labelledby="experience-tab" hidden>
-                <div class="section-header">
-                    <h2>Professional Experience</h2>
-                    <p>My journey through various roles and responsibilities</p>
+            <section id="experience" class="content-section" role="tabpanel">
+                <!-- Page Header -->
+                <div class="page-header">
+                    <h1 class="page-title">Experience</h1>
                 </div>
                 
-                <div class="timeline">
-                    <div class="timeline-item reveal" data-reveal>
-                        <div class="timeline-date">May 2025 - Present</div>
-                        <div class="timeline-content">
-                            <h3>Senior Software Engineer</h3>
-                            <h4>Lorem Tech Solutions</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Mauris viverra veniam sit amet lacus cursus de congue. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.</p>
+                <div class="section-header">
+                    <h2>PROFESSIONAL EXPERIENCE</h2>
+                    <p>Professional journey and key accomplishments</p>
+                </div>
+                
+                <div class="experience-timeline">
+                    <!-- Current Positions -->
+                    <div class="timeline-group">
+                        <div class="timeline-group-header">
+                            <div class="org-logo">
+                                <img src="images (1).jpeg" alt="Gurukul School Logo" class="org-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                                <span class="org-logo-fallback" style="display: none;">🎓</span>
+                            </div>
+                            <div class="org-info">
+                                <h3 class="organization-title">Gurukul The School (Official)</h3>
+                                <span class="org-status current-status">Currently Active</span>
+                            </div>
+                        </div>
+                        
+                        <div class="experience-item current">
+                            <div class="experience-timeline-dot"></div>
+                            <div class="experience-card">
+                                <div class="experience-header">
+                                    <div class="role-info">
+                                        <div class="role-icon">👨‍💼</div>
+                                        <div>
+                                            <h4>Class Representative</h4>
+                                            <p class="experience-company">Gurukul The School (Official)</p>
+                                        </div>
+                                    </div>
+                                    <div class="experience-date">
+                                        May 2025 - Present<br>
+                                        <span class="duration">(4 months)</span>
+                                    </div>
+                                </div>
+                                <p class="experience-description">As the Class Representative at Gurukul The School, I acted as a bridge between students and teachers, ensuring clear communication and smooth coordination. I represented my class in meetings, voiced concerns, and shared important updates while assisting in organizing academic activities.</p>
+                                <div class="skills-tags">
+                                    <span class="skill-tag">Leadership</span>
+                                    <span class="skill-tag">Communication</span>
+                                    <span class="skill-tag">Problem-solving</span>
+                                    <span class="skill-tag">Teamwork</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="experience-item current">
+                            <div class="experience-timeline-dot"></div>
+                            <div class="experience-card">
+                                <div class="experience-header">
+                                    <div class="role-info">
+                                        <div class="role-icon">🌱</div>
+                                        <div>
+                                            <h4>Sustainability Club Member</h4>
+                                            <p class="experience-company">Gurukul The School (Official)</p>
+                                        </div>
+                                    </div>
+                                    <div class="experience-date">
+                                        April 2025 - Present<br>
+                                        <span class="duration">(5 months)</span>
+                                    </div>
+                                </div>
+                                <p class="experience-description">As an active member of the Sustainability Club at Gurukul The School, I've had the opportunity to explore how small actions can make a big difference in building a greener future. Collaborated with peers on projects that encouraged sustainable practices and innovative solutions.</p>
+                                <div class="skills-tags">
+                                    <span class="skill-tag">Sustainability</span>
+                                    <span class="skill-tag">Innovation</span>
+                                    <span class="skill-tag">Teamwork</span>
+                                    <span class="skill-tag">Environmental Stewardship</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    
-                    <div class="timeline-item reveal" data-reveal>
-                        <div class="timeline-date">April 2025 - Present</div>
-                        <div class="timeline-content">
-                            <h3>Full Stack Developer</h3>
-                            <h4>Digital Innovation Corp</h4>
-                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+
+                    <!-- Past Positions -->
+                    <div class="timeline-group">
+                        <div class="timeline-group-header">
+                            <div class="org-logo">
+                                <img src="images (1).jpeg" alt="Gurukul School Logo" class="org-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                                <span class="org-logo-fallback" style="display: none;">🎓</span>
+                            </div>
+                            <div class="org-info">
+                                <h3 class="organization-title">Gurukul The School (Official)</h3>
+                                <span class="org-status">Past Positions</span>
+                            </div>
+                        </div>
+                        
+                        <div class="experience-item">
+                            <div class="experience-timeline-dot"></div>
+                            <div class="experience-card">
+                                <div class="experience-header">
+                                    <div class="role-info">
+                                        <div class="role-icon">📋</div>
+                                        <div>
+                                            <h4>Administration (Admission Drive)</h4>
+                                            <p class="experience-company">Gurukul The School (Official)</p>
+                                        </div>
+                                    </div>
+                                    <div class="experience-date">
+                                        July 2024 - January 2025<br>
+                                        <span class="duration">(7 months)</span>
+                                    </div>
+                                </div>
+                                <p class="experience-description">Contributed to the school's admission process by supporting administrative tasks and helping streamline the admission drive operations.</p>
+                                <div class="skills-tags">
+                                    <span class="skill-tag">Administration</span>
+                                    <span class="skill-tag">Process Management</span>
+                                    <span class="skill-tag">Organization</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="experience-item">
+                            <div class="experience-timeline-dot"></div>
+                            <div class="experience-card">
+                                <div class="experience-header">
+                                    <div class="role-info">
+                                        <div class="role-icon">💻</div>
+                                        <div>
+                                            <h4>Tech Club Member</h4>
+                                            <p class="experience-company">Gurukul The School (Official)</p>
+                                        </div>
+                                    </div>
+                                    <div class="experience-date">
+                                        January 2023 - January 2025<br>
+                                        <span class="duration">(2 years 1 month)</span>
+                                    </div>
+                                </div>
+                                <p class="experience-description">Explored and expanded skills in game creation, video editing, and creative software tools. Learned to design interactive games using Sandbox and gained hands-on experience with Filmora for video editing projects.</p>
+                                <div class="skills-tags">
+                                    <span class="skill-tag">Game Development</span>
+                                    <span class="skill-tag">Video Editing</span>
+                                    <span class="skill-tag">Filmora</span>
+                                    <span class="skill-tag">Sandbox</span>
+                                    <span class="skill-tag">Creative Design</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="experience-item">
+                            <div class="experience-timeline-dot"></div>
+                            <div class="experience-card">
+                                <div class="experience-header">
+                                    <div class="role-info">
+                                        <div class="role-icon">📚</div>
+                                        <div>
+                                            <h4>Academic Class Representative</h4>
+                                            <p class="experience-company">Gurukul The School (Official)</p>
+                                        </div>
+                                    </div>
+                                    <div class="experience-date">
+                                        April 2023 - February 2024<br>
+                                        <span class="duration">(11 months)</span>
+                                    </div>
+                                </div>
+                                <p class="experience-description">Facilitated communication between students and faculty on academic matters. Coordinated assignment deadlines, shared curriculum updates, and conveyed feedback to teachers while ensuring clarity for classmates.</p>
+                                <div class="skills-tags">
+                                    <span class="skill-tag">Academic Coordination</span>
+                                    <span class="skill-tag">Communication</span>
+                                    <span class="skill-tag">Leadership</span>
+                                    <span class="skill-tag">Organization</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    
-                    <div class="timeline-item reveal" data-reveal>
-                        <div class="timeline-date">Jan 2023 - Jan 2025</div>
-                        <div class="timeline-content">
-                            <h3>Junior Web Developer</h3>
-                            <h4>Creative Tech Studio</h4>
-                            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
+
+                    <!-- External Organizations -->
+                    <div class="timeline-group">
+                        <div class="timeline-group-header">
+                            <div class="org-logo">
+                                <img src="images.jpeg" alt="Google Cloud Logo" class="org-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                                <span class="org-logo-fallback" style="display: none;">☁️</span>
+                            </div>
+                            <div class="org-info">
+                                <h3 class="organization-title">Google Cloud Skills Boost</h3>
+                                <span class="org-status">Completed Program</span>
+                            </div>
+                        </div>
+                        
+                        <div class="experience-item">
+                            <div class="experience-timeline-dot"></div>
+                            <div class="experience-card">
+                                <div class="experience-header">
+                                    <div class="role-info">
+                                        <div class="role-icon">🎮</div>
+                                        <div>
+                                            <h4>Google Arcade Lab Player</h4>
+                                            <p class="experience-company">Google Cloud Skills Boost</p>
+                                        </div>
+                                    </div>
+                                    <div class="experience-date">
+                                        September 2023 - January 2024<br>
+                                        <span class="duration">(5 months)</span>
+                                    </div>
+                                </div>
+                                <p class="experience-description">Gained practical experience with core Google Cloud Platform (GCP) services including Compute Engine, Cloud Storage, and AI/ML tools. Worked on real-world tasks that challenged me to optimize workflows and scale solutions using cloud-native technologies.</p>
+                                <div class="achievement-highlight">
+                                    <span class="achievement-icon">🏆</span>
+                                    <span>Earned exclusive digital badges and Google Cloud cap as recognition</span>
+                                </div>
+                                <div class="skills-tags">
+                                    <span class="skill-tag">Google Cloud Platform</span>
+                                    <span class="skill-tag">Cloud Computing</span>
+                                    <span class="skill-tag">AI/ML Tools</span>
+                                    <span class="skill-tag">Cloud Architecture</span>
+                                    <span class="skill-tag">Automation</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    
-                    <div class="timeline-item reveal" data-reveal>
-                        <div class="timeline-date">Sep 2023 - Jan 2024</div>
-                        <div class="timeline-content">
-                            <h3>Software Development Intern</h3>
-                            <h4>Lorem Cloud Technologies</h4>
-                            <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+
+                    <div class="timeline-group">
+                        <div class="timeline-group-header">
+                            <div class="org-logo">
+                                <img src="unnamed.png" alt="GoSharpener Logo" class="org-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                                <span class="org-logo-fallback" style="display: none;">🚀</span>
+                            </div>
+                            <div class="org-info">
+                                <h3 class="organization-title">GoSharpener</h3>
+                                <span class="org-status">Climate Advocacy</span>
+                            </div>
+                        </div>
+                        
+                        <div class="experience-item">
+                            <div class="experience-timeline-dot"></div>
+                            <div class="experience-card">
+                                <div class="experience-header">
+                                    <div class="role-info">
+                                        <div class="role-icon">🌍</div>
+                                        <div>
+                                            <h4>ProMotivator</h4>
+                                            <p class="experience-company">GoSharpener</p>
+                                        </div>
+                                    </div>
+                                    <div class="experience-date">
+                                        January 2023 - January 2024<br>
+                                        <span class="duration">(1 year 1 month)</span>
+                                    </div>
+                                </div>
+                                <p class="experience-description">Actively encouraged individuals—especially youth—to embrace sustainable habits and rethink their relationship with nature. Led conversations and shared actionable tips to inspire environmentally conscious choices in daily life.</p>
+                                <div class="achievement-highlight">
+                                    <span class="achievement-icon">🌱</span>
+                                    <span>Became a voice for mindful living and ecological responsibility</span>
+                                </div>
+                                <div class="skills-tags">
+                                    <span class="skill-tag">Climate Advocacy</span>
+                                    <span class="skill-tag">Social Storytelling</span>
+                                    <span class="skill-tag">Digital Marketing</span>
+                                    <span class="skill-tag">Community Building</span>
+                                    <span class="skill-tag">Environmental Awareness</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
 
             <!-- Awards Section -->
-            <section id="awards" class="content-section" role="tabpanel" aria-labelledby="awards-tab" hidden>
+            <section id="awards" class="content-section" role="tabpanel">
+                <!-- Page Header -->
+                <div class="page-header">
+                    <h1 class="page-title">Awards</h1>
+                </div>
+                
                 <div class="section-header">
-                    <h2>Honors & Awards</h2>
-                    <p>Recognition for excellence in design and technology</p>
+                    <h2>AWARDS & RECOGNITION</h2>
+                    <p>Notable achievements and recognitions received</p>
                 </div>
                 
                 <div class="awards-grid">
-                    <div class="award-card reveal" data-reveal>
-                        <div class="award-year">2024</div>
-                        <h3>Lorem Excellence Award</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
-                        <div class="award-badge">🥇 Excellence</div>
+                    <div class="award-item">
+                        <div class="award-position">1st</div>
+                        <div class="award-content">
+                            <h4>Design Championship Nationals Coding - 2023</h4>
+                            <p class="award-organization">ICT360</p>
+                            <p class="award-description">First position in the National Design Championship for Coding category, demonstrating exceptional programming skills and innovative problem-solving abilities.</p>
+                            <div class="award-category">Coding 2024</div>
+                        </div>
                     </div>
                     
-                    <div class="award-card reveal" data-reveal>
-                        <div class="award-year">2023</div>
-                        <h3>Innovation Leadership Prize</h3>
-                        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-                        <div class="award-badge">🏆 Leadership</div>
+                    <div class="award-item">
+                        <div class="award-position">1st</div>
+                        <div class="award-content">
+                            <h4>Design Championship Nationals Web Design - 2023</h4>
+                            <p class="award-organization">ICT360</p>
+                            <p class="award-description">First position in the National Design Championship for Web Design category, showcasing exceptional design skills and user experience expertise.</p>
+                            <div class="award-category">Web Design 2023</div>
+                        </div>
                     </div>
                     
-                    <div class="award-card reveal" data-reveal>
-                        <div class="award-year">2023</div>
-                        <h3>Digital Transformation Award</h3>
-                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</p>
-                        <div class="award-badge">💻 Digital</div>
+                    <div class="award-item">
+                        <div class="award-position">1st</div>
+                        <div class="award-content">
+                            <h4>Design Championship Nationals Web Design 2022</h4>
+                            <p class="award-organization">ICT360</p>
+                            <p class="award-description">First position in the National Design Championship for Web Design category, demonstrating consistent excellence in web development and design.</p>
+                            <div class="award-category">Web Design 2022</div>
+                        </div>
                     </div>
                     
-                    <div class="award-card reveal" data-reveal>
-                        <div class="award-year">2022</div>
-                        <h3>Creative Solutions Recognition</h3>
-                        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.</p>
-                        <div class="award-badge">� Creative</div>
+                    <div class="award-item">
+                        <div class="award-position">1st</div>
+                        <div class="award-content">
+                            <h4>Design Championship Regional Coding - 2024</h4>
+                            <p class="award-organization">ICT360</p>
+                            <p class="award-description">First position in the Regional Design Championship for Coding category, showcasing advanced programming skills and algorithmic thinking.</p>
+                            <div class="award-category">Coding 2024</div>
+                        </div>
                     </div>
                     
-                    <div class="award-card reveal" data-reveal>
-                        <div class="award-year">2022</div>
-                        <h3>Technology Pioneer Award</h3>
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.</p>
-                        <div class="award-badge">🚀 Pioneer</div>
+                    <div class="award-item">
+                        <div class="award-position">2nd</div>
+                        <div class="award-content">
+                            <h4>INFINITUS 2025 - Webpage Weaver</h4>
+                            <p class="award-organization">Delhi Public School Meerut Road</p>
+                            <p class="award-description">First position in the INFINITUS 2025 Webpage Weaver competition, demonstrating excellence in modern web development techniques and creative design.</p>
+                            <div class="award-category">Web Development 2025</div>
+                        </div>
                     </div>
                     
-                    <div class="award-card reveal" data-reveal>
-                        <div class="award-year">2021</div>
-                        <h3>Outstanding Achievement Medal</h3>
-                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium.</p>
-                        <div class="award-badge">🏅 Achievement</div>
+                    <div class="award-item">
+                        <div class="award-position">1st</div>
+                        <div class="award-content">
+                            <h4>KECHNOVATION - Brand Design</h4>
+                            <p class="award-organization">Khaitan Public School</p>
+                            <p class="award-description">First position in KECHNOVATION Brand Design competition, showcasing exceptional creative skills in brand identity and visual communication.</p>
+                            <div class="award-category">Graphic Design 2023</div>
+                        </div>
+                    </div>
+                    
+                    <div class="award-item">
+                        <div class="award-position">1st</div>
+                        <div class="award-content">
+                            <h4>KECHNOVATION 2025 - Video Editing</h4>
+                            <p class="award-organization">Khaitan Public School</p>
+                            <p class="award-description">First position in KECHNOVATION 2025 Video Editing competition, demonstrating advanced video production and post-production skills.</p>
+                            <div class="award-category">Video Editing 2025</div>
+                        </div>
+                    </div>
+                    
+                    <div class="award-item">
+                        <div class="award-position">1st</div>
+                        <div class="award-content">
+                            <h4>SPARDHA - 4x100 Relay Race</h4>
+                            <p class="award-organization">Gurukul The School</p>
+                            <p class="award-description">First position in SPARDHA 4x100 Relay Race, showcasing teamwork, speed, and athletic excellence in inter-school competition.</p>
+                            <div class="award-category">Relay Race</div>
+                        </div>
+                    </div>
+                    
+                    <div class="award-item">
+                        <div class="award-position">2nd</div>
+                        <div class="award-content">
+                            <h4>Startup Conclave : Pitch-a-thon</h4>
+                            <p class="award-organization">Shaheed Bhagat Singh College (Evening)</p>
+                            <p class="award-description">First position in the Startup Conclave Pitch-a-thon, demonstrating exceptional entrepreneurial skills and innovative business ideas.</p>
+                            <div class="award-category">Entrepreneurship 2025</div>
+                        </div>
                     </div>
                 </div>
             </section>
 
             <!-- Volunteering Section -->
-            <section id="volunteering" class="content-section" role="tabpanel" aria-labelledby="volunteering-tab" hidden>
-                <div class="section-header">
-                    <h2>Community Impact</h2>
-                    <p>Giving back through volunteer work and community initiatives</p>
+            <section id="volunteering" class="content-section" role="tabpanel">
+                <!-- Page Header -->
+                <div class="page-header">
+                    <h1 class="page-title">Volunteering</h1>
                 </div>
                 
-                <div class="volunteer-grid">
-                    <div class="volunteer-card reveal" data-reveal>
-                        <h3>Community Development Initiative</h3>
-                        <h4>Lorem Foundation • Jan 2023 - Present</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.</p>
-                        <div class="impact-stats">
-                            <span>� 500+ Lives Impacted</span>
-                            <span>� Community Growth</span>
-                            <span>💡 Innovation Focus</span>
+                <div class="section-header">
+                    <h2>VOLUNTEER EXPERIENCE</h2>
+                    <p>Community involvement and social impact initiatives</p>
+                </div>
+                
+                <div class="volunteering-list">
+                    <div class="volunteer-item">
+                        <div class="volunteer-content">
+                            <div class="volunteer-header">
+                                <div class="role-info">
+                                    <div class="role-icon">🌱</div>
+                                    <div>
+                                        <h4>Student Volunteer</h4>
+                                        <p class="volunteer-organization">GoSharpener</p>
+                                    </div>
+                                </div>
+                                <div class="volunteer-logo">
+                                    <img src="unnamed.png" alt="GoSharpener Logo" class="org-logo-img" onerror="this.style.display='none';">
+                                </div>
+                            </div>
+                            <p class="volunteer-description">Active student volunteer contributing to sustainability initiatives and environmental awareness programs. Participating in projects that promote eco-friendly practices and community engagement for environmental stewardship.</p>
+                            <div class="skills-tags">
+                                <span class="skill-tag">Sustainability</span>
+                                <span class="skill-tag">Community Engagement</span>
+                                <span class="skill-tag">Environmental Advocacy</span>
+                            </div>
                         </div>
                     </div>
                     
-                    <div class="volunteer-card reveal" data-reveal>
-                        <h3>Digital Literacy Program</h3>
-                        <h4>Tech for All • Ongoing</h4>
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur.</p>
-                        <div class="impact-stats">
-                            <span>💻 Digital Skills</span>
-                            <span>🎓 Education Focus</span>
-                            <span>🤝 Collaboration</span>
-                        </div>
-                    </div>
-                    
-                    <div class="volunteer-card reveal" data-reveal>
-                        <h3>Environmental Conservation Project</h3>
-                        <h4>Green Future Alliance • 2022 - 2024</h4>
-                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi.</p>
-                        <div class="impact-stats">
-                            <span>🌱 Sustainability</span>
-                            <span>🌍 Global Impact</span>
-                            <span>♻️ Eco Solutions</span>
+                    <div class="volunteer-item">
+                        <div class="volunteer-content">
+                            <div class="volunteer-header">
+                                <div class="role-info">
+                                    <div class="role-icon">📢</div>
+                                    <div>
+                                        <h4>Marketing Volunteer</h4>
+                                        <p class="volunteer-organization">Utthan India</p>
+                                    </div>
+                                </div>
+                                <div class="volunteer-date">2025</div>
+                            </div>
+                            <p class="volunteer-description">Marketing volunteer supporting Utthan India's environmental initiatives and community outreach programs. Contributing to digital marketing campaigns and content creation to raise awareness about environmental issues and sustainable practices.</p>
+                            <div class="skills-tags">
+                                <span class="skill-tag">Marketing</span>
+                                <span class="skill-tag">Environment</span>
+                                <span class="skill-tag">Digital Outreach</span>
+                                <span class="skill-tag">Content Creation</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
 
             <!-- Certifications Section -->
-            <section id="certifications" class="content-section" role="tabpanel" aria-labelledby="certifications-tab" hidden>
-                <div class="section-header">
-                    <h2>Professional Certifications</h2>
-                    <p>Continuous learning and skill development</p>
+            <section id="certifications" class="content-section" role="tabpanel">
+                <!-- Page Header -->
+                <div class="page-header">
+                    <h1 class="page-title">Certifications</h1>
                 </div>
                 
-                <div class="cert-grid">
-                    <div class="cert-card reveal" data-reveal>
-                        <div class="cert-provider">Lorem Academy</div>
-                        <h3>Advanced Web Development Certificate</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <div class="section-header">
+                    <h2>PROFESSIONAL CERTIFICATIONS</h2>
+                    <p>Verified credentials and technical qualifications</p>
+                </div>
+                
+                <div class="certifications-grid">
+                    <div class="certification-item">
+                        <div class="cert-position">1.</div>
+                        <div class="cert-content">
+                            <h4>Course Completion Web Development</h4>
+                            <p class="cert-issuer">Udemy</p>
+                            <p class="cert-description">Comprehensive web development course completion certificate demonstrating proficiency in modern web technologies and development practices.</p>
+                            <div class="award-category">Web Development</div>
+                        </div>
                     </div>
                     
-                    <div class="cert-card reveal" data-reveal>
-                        <div class="cert-provider">Tech Institute</div>
-                        <h3>Full Stack JavaScript Certification</h3>
-                        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <div class="certification-item">
+                        <div class="cert-position">2.</div>
+                        <div class="cert-content">
+                            <h4>Course Completion On Front End Web Development</h4>
+                            <p class="cert-issuer">EDUCBA</p>
+                            <p class="cert-description">Front-end web development course completion certificate covering HTML, CSS, JavaScript, and modern front-end frameworks and libraries.</p>
+                            <div class="award-category">Front-End Development</div>
+                        </div>
                     </div>
                     
-                    <div class="cert-card reveal" data-reveal>
-                        <div class="cert-provider">Cloud Solutions</div>
-                        <h3>Cloud Architecture Professional</h3>
-                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                    <div class="certification-item">
+                        <div class="cert-position">3.</div>
+                        <div class="cert-content">
+                            <h4>Cyber Security and Ethical Hacking Training</h4>
+                            <p class="cert-issuer">Edureka</p>
+                            <p class="cert-description">Comprehensive training certificate in cybersecurity and ethical hacking, covering security fundamentals, penetration testing, and ethical hacking methodologies.</p>
+                            <div class="award-category">Cyber Security</div>
+                        </div>
                     </div>
                     
-                    <div class="cert-card reveal" data-reveal>
-                        <div class="cert-provider">Security Academy</div>
-                        <h3>Cybersecurity Specialist Certificate</h3>
-                        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <div class="certification-item">
+                        <div class="cert-position">4.</div>
+                        <div class="cert-content">
+                            <h4>Digital Transformation with Google Cloud</h4>
+                            <p class="cert-issuer">Google Cloud Training Online</p>
+                            <p class="cert-date">Credential ID: JPAASU7FR3B3</p>
+                            <p class="cert-description">Professional certification demonstrating understanding of digital transformation concepts and Google Cloud Platform services for modern business solutions.</p>
+                            <div class="award-category">Digital Transformation with Google Cloud</div>
+                        </div>
                     </div>
                     
-                    <div class="cert-card reveal" data-reveal>
-                        <div class="cert-provider">Data Science Hub</div>
-                        <h3>Machine Learning Fundamentals</h3>
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
-                    </div>
-                    
-                    <div class="cert-card reveal" data-reveal>
-                        <div class="cert-provider">Mobile Dev Institute</div>
-                        <h3>Mobile App Development Certificate</h3>
-                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum.</p>
-                    </div>
-                    
-                    <div class="cert-card reveal" data-reveal>
-                        <div class="cert-provider">UX Design Academy</div>
-                        <h3>User Experience Design Certification</h3>
-                        <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.</p>
-                    </div>
-                    
-                    <div class="cert-card reveal" data-reveal>
-                        <div class="cert-provider">DevOps Institute</div>
-                        <h3>DevOps Engineering Certificate</h3>
-                        <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.</p>
+                    <div class="certification-item">
+                        <div class="cert-position">5.</div>
+                        <div class="cert-content">
+                            <h4>ProMotivator</h4>
+                            <p class="cert-issuer">GoSharpener</p>
+                            <p class="cert-description">Certification recognizing successful completion of the ProMotivator program, demonstrating skills in environmental advocacy, community engagement, and sustainability promotion.</p>
+                            <div class="award-category">Environmental Leadership</div>
+                        </div>
                     </div>
                 </div>
             </section>
 
             <!-- Projects Section -->
-            <section id="projects" class="content-section" role="tabpanel" aria-labelledby="projects-tab" hidden>
-                <div class="section-header">
-                    <h2>Featured Projects</h2>
-                    <p>Showcasing innovative solutions and creative implementations</p>
+            <section id="projects" class="content-section" role="tabpanel">
+                <!-- Page Header -->
+                <div class="page-header">
+                    <h1 class="page-title">Projects</h1>
                 </div>
                 
-                <div class="projects-grid">
-                    <div class="project-card reveal" data-reveal>
-                        <div class="project-header">
-                            <h3>Lorem E-Commerce Platform</h3>
-                            <div class="project-status">Live</div>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
-                        <div class="tech-stack">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">MongoDB</span>
-                            <span class="tech-tag">Express</span>
-                        </div>
-                    </div>
-                    
-                    <div class="project-card reveal" data-reveal>
-                        <div class="project-header">
-                            <h3>Digital Analytics Dashboard</h3>
-                            <div class="project-status">Development</div>
-                        </div>
-                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.</p>
-                        <div class="tech-stack">
-                            <span class="tech-tag">Vue.js</span>
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">PostgreSQL</span>
-                            <span class="tech-tag">Docker</span>
-                        </div>
-                    </div>
-                    
-                    <div class="project-card reveal" data-reveal>
-                        <div class="project-header">
-                            <h3>Mobile Learning Application</h3>
-                            <div class="project-status">Beta</div>
-                        </div>
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.</p>
-                        <div class="tech-stack">
-                            <span class="tech-tag">React Native</span>
-                            <span class="tech-tag">Firebase</span>
-                            <span class="tech-tag">TypeScript</span>
-                            <span class="tech-tag">Redux</span>
+                <div class="section-header">
+                    <h2>FEATURED PROJECTS</h2>
+                    <p>Showcase of innovative solutions and technical expertise</p>
+                    <div id="projectFilters" class="project-filters" aria-label="Project filters" role="toolbar"></div>
+                </div>
+                
+                <div class="projects-timeline">
+                    <!-- Year 2025 -->
+                    <div class="timeline-year" data-year="2025">2025</div>
+                    <div class="project-item" data-year="2025">
+                        <div class="project-timeline-dot"></div>
+                        <div class="project-card">
+                            <div class="project-header">
+                                <div class="role-info">
+                                    <div class="role-icon">🤖</div>
+                                    <div>
+                                        <h4>AI and IoT Based Glove Monitoring System</h4>
+                                        <p class="project-type">Innovation Development</p>
+                                    </div>
+                                </div>
+                                <div class="project-meta">
+                                    <span class="project-status-badge status-ongoing">Ongoing</span>
+                                    <div class="project-date">2025 · Ongoing</div>
+                                </div>
+                            </div>
+                            <p class="project-description">I have developed a Smart Hygiene Monitoring Glove that promotes safe food preparation and transparency in restaurants. Unlike traditional disposable gloves, this glove is reusable, eco-friendly, and capable of tracking hygiene practices in real time. It ensures that food handlers maintain proper hygiene, and the system shares compliance ratings with restaurant owners, authorities, and even customers. This innovation aims to reduce foodborne illnesses, build public trust, and support national missions like Swachh Bharat, Digital India, and Viksit Bharat 2047 by creating a cleaner, healthier, and more accountable food ecosystem.</p>
+                            <div class="skills-tags">
+                                <span class="skill-tag">Innovation Development</span>
+                                <span class="skill-tag">Artificial Intelligence (AI)</span>
+                                <span class="skill-tag">Internet of Things (IoT)</span>
+                                <span class="skill-tag">Problem Solving</span>
+                            </div>
                         </div>
                     </div>
-                    
-                    <div class="project-card reveal" data-reveal>
-                        <div class="project-header">
-                            <h3>Cloud Infrastructure Automation</h3>
-                            <div class="project-status">Completed</div>
-                        </div>
-                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi.</p>
-                        <div class="tech-stack">
-                            <span class="tech-tag">AWS</span>
-                            <span class="tech-tag">Terraform</span>
-                            <span class="tech-tag">Kubernetes</span>
-                            <span class="tech-tag">Jenkins</span>
+
+                    <!-- Year 2024 -->
+                    <div class="timeline-year" data-year="2024">2024</div>
+                    <div class="project-item" data-year="2024">
+                        <div class="project-timeline-dot"></div>
+                        <div class="project-card">
+                            <div class="project-header">
+                                <div class="role-info">
+                                    <div class="role-icon">🎟️</div>
+                                    <div>
+                                        <h4>Auditorium Seat Booking System</h4>
+                                        <p class="project-type">Full-Stack Development</p>
+                                    </div>
+                                </div>
+                                <div class="project-meta">
+                                    <span class="project-status-badge status-completed">Completed</span>
+                                    <div class="project-date">2024 · Completed</div>
+                                </div>
+                            </div>
+                            <p class="project-description">Developed a real-time seat management platform that assigns unique, verifiable seat numbers to parents, authenticated at entry by security staff to ensure smooth and secure access. The system features dynamic seat mapping with concurrency control, preventing double bookings and reducing congestion during high-traffic events. Beyond allocation, the platform fosters collaboration across administration, faculty, parents, and security through an integrated ecosystem. With automated notifications and a responsive, user-friendly interface, communication and operational workflows were significantly streamlined. This scalable, mission-critical solution highlights my ability to engineer systems that optimize event logistics while ensuring efficiency, transparency, and stakeholder coordination in complex environments.</p>
+                            <div class="skills-tags">
+                                <span class="skill-tag">Full-Stack Development</span>
+                                <span class="skill-tag">Database Administration</span>
+                                <span class="skill-tag">Django</span>
+                                <span class="skill-tag">Python (Programming Language)</span>
+                            </div>
                         </div>
                     </div>
-                    
-                    <div class="project-card reveal" data-reveal>
-                        <div class="project-header">
-                            <h3>AI Content Management System</h3>
-                            <div class="project-status">Planning</div>
-                        </div>
-                        <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore.</p>
-                        <div class="tech-stack">
-                            <span class="tech-tag">Angular</span>
-                            <span class="tech-tag">Django</span>
-                            <span class="tech-tag">TensorFlow</span>
-                            <span class="tech-tag">Redis</span>
-                        </div>
-                    </div>
-                    
-                    <div class="project-card reveal" data-reveal>
-                        <div class="project-header">
-                            <h3>Blockchain Voting Platform</h3>
-                            <div class="project-status">Prototype</div>
-                        </div>
-                        <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur quis autem.</p>
-                        <div class="tech-stack">
-                            <span class="tech-tag">Solidity</span>
-                            <span class="tech-tag">Web3.js</span>
-                            <span class="tech-tag">Ethereum</span>
-                            <span class="tech-tag">Next.js</span>
+
+                    <!-- Back to 2025 for another active project -->
+                    <div class="project-item" data-year="2024">
+                        <div class="project-timeline-dot"></div>
+                        <div class="project-card">
+                            <div class="project-header">
+                                <div class="role-info">
+                                    <div class="role-icon">💪</div>
+                                    <div>
+                                        <h4>FitPlan: AI-Driven Personalized Wellness Ecosystem</h4>
+                                        <p class="project-type">AI/ML Development</p>
+                                    </div>
+                                </div>
+                                <div class="project-meta">
+                                    <span class="project-status-badge status-completed">Completed</span>
+                                    <div class="project-date">2024 · Completed</div>
+                                </div>
+                            </div>
+                            <p class="project-description">Designed and built FitPlan, an intelligent wellness platform that leverages natural language processing (NLP) and machine learning to translate user inputs and contextual cues into tailored nutrition, fitness, and progress roadmaps. Unlike static fitness apps, FitPlan evolves continuously—adapting to users' changing goals, biometric data, and lifestyle feedback. By blending AI-powered analytics with localized health insights, the platform delivers strategies that are not only scientifically optimized but also culturally relevant to India's diverse population. FitPlan demonstrates how technology can be harnessed to create scalable, impactful solutions at the intersection of healthcare, technology, and personalization.</p>
+                            <div class="skills-tags">
+                                <span class="skill-tag">Natural Language Processing (NLP)</span>
+                                <span class="skill-tag">Data Architecture</span>
+                                <span class="skill-tag">Web Development</span>
+                                <span class="skill-tag">Python (Programming Language)</span>
+                                <span class="skill-tag">Django</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
         </main>
     </div>
-    
-    <script src="script.js"></script>
+
+    <script src="script-new.js"></script>
+    <!-- Floating Music Player -->
+    <div id="music-player" class="music-player" aria-label="Background music player" role="region">
+        <button class="mp-toggle" aria-label="Toggle player" title="Toggle player" id="mpCollapseBtn">♪</button>
+        <div class="mp-body">
+            <div class="mp-header">
+                <span class="mp-title" id="mpTrackTitle">No Track</span>
+            </div>
+            <div class="mp-controls">
+                <button class="mp-btn" id="mpPrevBtn" aria-label="Previous track" title="Previous">⏮</button>
+                <button class="mp-btn" id="mpPlayBtn" aria-label="Play" title="Play">▶</button>
+                <button class="mp-btn" id="mpNextBtn" aria-label="Next track" title="Next">⏭</button>
+                <div class="mp-progress" aria-label="Progress" role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0">
+                    <div class="mp-progress-bar" id="mpProgressBar"></div>
+                </div>
+                <input type="range" id="mpVolume" class="mp-volume" min="0" max="1" step="0.01" value="0.7" aria-label="Volume">
+                <select id="mpTrackSelect" class="mp-select" aria-label="Select track"></select>
+            </div>
+            <audio id="mpAudio" preload="none"></audio>
+            <div class="mp-footer">
+                <span class="mp-status" id="mpStatus">Idle</span>
+            </div>
+            <div id="mpVisualizer" class="mp-visualizer" aria-hidden="true"></div>
+        </div>
+    </div>
 </body>
 </html>
